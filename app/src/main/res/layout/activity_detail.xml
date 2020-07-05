@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.activities.DetailActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:name="com.blackfrogweb.mercadofinder.presentation.fragments.DetailFragment"
         android:id="@+id/activity_detail_fragment_search"
         android:layout_width="match_parent"

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorViewBackground">
+
+    <ScrollView
+        android:id="@+id/fragment_detail_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_detail_card_view"
+            style="@style/MercadoFinderCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fragment_detail_image_view_thumbnail"
+                    android:layout_width="@dimen/item_detail_image_size"
+                    android:layout_height="@dimen/item_detail_image_size"
+                    android:layout_gravity="top"
+                    android:src="@drawable/image_placeholder" />
+
+                <Space
+                    android:layout_width="@dimen/spacing"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fragment_detail_text_view_title"
+                        style="@style/MercadoFinderHeaderTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Product title" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/price" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_price_value"
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$300" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing_small"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_installments_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:textColor="@color/colorGreen"
+                            android:visibility="gone"
+                            tools:text="$300"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/condition" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_condition_value"
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="new" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/free_shipping" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_free_shipping_value"
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="no" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/available" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_available_value"
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="over 50" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sold" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/fragment_detail_text_view_sold_value"
+                            style="@style/MercadoFinderSubHeaderTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="5" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/fragment_detail_button_go_to_page"
+                        style="@style/MercadoFinderButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/spacing"
+                        android:drawableEnd="@drawable/web"
+                        android:drawablePadding="@dimen/spacing"
+                        android:text="@string/go_to_product_page" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/fragment_detail_layout_user_message"
+        layout="@layout/layout_user_message"
+        android:visibility="gone" />
+
+</FrameLayout>

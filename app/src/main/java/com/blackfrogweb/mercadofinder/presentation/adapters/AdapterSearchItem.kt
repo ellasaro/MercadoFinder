@@ -35,7 +35,9 @@ class AdapterSearchItem(private val listener: OnSearchItemListener) :
             view.adapter_search_item_text_view_title.text = searchItem.title
             view.adapter_search_item_text_view_condition.text = if(searchItem.condition == CONDITION_NEW) view.context.getString(R.string.condition_new) else view.context.getString(R.string.condition_used)
 
-            Glide.with(view.context).load(searchItem.thumbnail)
+            Glide.with(view.context)
+                .load(searchItem.thumbnail)
+                .placeholder(R.drawable.image_placeholder)
                 .into(view.adapter_search_item_image_view_thumbnail)
         }
 
