@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -76,7 +77,7 @@ class SearchFragment : Fragment(), OnSearchItemListener {
                         v?.fragment_search_edit_text_search_field?.text?.toString() ?: ""
                     )
                 } else {
-                    //TODO show snackbar message
+                    showToast(getString(R.string.empty_search_field_message))
                 }
                 true
             } else {
@@ -127,5 +128,9 @@ class SearchFragment : Fragment(), OnSearchItemListener {
     private fun hideKeyboard(v: View?) {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm?.hideSoftInputFromWindow(v?.windowToken, 0)
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
     }
 }

@@ -9,14 +9,14 @@
     android:showDividers="middle"
     tools:context=".presentation.activities.MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/activity_main_fragment_search"
         android:name="com.blackfrogweb.mercadofinder.presentation.fragments.SearchFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"/>
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/activity_main_fragment_detail"
         android:name="com.blackfrogweb.mercadofinder.presentation.fragments.DetailFragment"
         android:layout_width="0dp"

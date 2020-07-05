@@ -14,13 +14,12 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.arrow_left)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-
         val searchItem = intent?.getSerializableExtra(SEARCH_ITEM_KEY) as? SearchItem
         (activity_detail_fragment_search as? DetailFragment)?.showItemDetail(searchItem)
     }

@@ -33,7 +33,7 @@
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@color/colorDark"
+                android:textColor="@color/colorTextDark"
                 android:textCursorDrawable="@null" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/spacing"
                 android:layout_marginEnd="@dimen/spacing"
-                android:tint="@color/colorDark"
+                android:tint="@color/colorTextDark"
                 app:srcCompat="@drawable/magnify" />
 
         </LinearLayout>

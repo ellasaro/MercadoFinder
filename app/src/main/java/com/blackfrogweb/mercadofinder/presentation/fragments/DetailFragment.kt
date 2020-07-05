@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.blackfrogweb.mercadofinder.presentation.activities.*
 import com.blackfrogweb.mercadofinder.R
@@ -17,6 +18,7 @@ import com.blackfrogweb.mercadofinder.presentation.constants.CONDITION_NEW
 import com.blackfrogweb.mercadofinder.presentation.helpers.StringMapper
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detail.view.*
+import kotlinx.android.synthetic.main.layout_user_message.view.*
 
 /**
  * Fragment used to see an item's detailed information. Loads the item's permalink.
@@ -40,6 +42,13 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_detail, container, false)
+        v?.layout_user_message_image_view?.setImageDrawable(
+            ContextCompat.getDrawable(
+                mContext,
+                R.drawable.shopping_bag
+            )
+        )
+        v?.layout_user_message_text_view?.text = getString(R.string.detail_fragment_welcome_message)
         return v
     }
 

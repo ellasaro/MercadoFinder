@@ -27,4 +27,6 @@
     <string name="no">no</string>
     <string name="installments_format">or %s x %s</string>
     <string name="product_detail">Product detail</string>
+    <string name="empty_search_field_message">You need to type something to search</string>
+    <string name="detail_fragment_welcome_message">Once you find something you like,\nthe product\'s details will appear here</string>
 </resources>

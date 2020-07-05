@@ -207,6 +207,6 @@
     <include
         android:id="@+id/fragment_detail_layout_user_message"
         layout="@layout/layout_user_message"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </FrameLayout>

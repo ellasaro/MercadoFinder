@@ -23,4 +23,6 @@
     <string name="no">no</string>
     <string name="installments_format">o %s x %s</string>
     <string name="product_detail">Detalle del producto</string>
+    <string name="empty_search_field_message">Necesitas escribir algo para buscar</string>
+    <string name="detail_fragment_welcome_message">Cuando encuentres algo que te guste,\nlos detalles del producto aparecerán aquí</string>
 </resources>

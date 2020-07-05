@@ -5,6 +5,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/MercadoFinderToolbarStyle</item>
+    </style>
+
+    <style name="MercadoFinderToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/colorAccentDark</item>
     </style>
 
     <style name="MainActivityTheme" parent="AppTheme">
@@ -14,7 +19,7 @@
     <style name="MercadoFinderHeaderTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/text_size_2</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/colorDark</item>
+        <item name="android:textColor">@color/colorTextDark</item>
     </style>
 
     <style name="MercadoFinderSubHeaderTextStyle" parent="MercadoFinderHeaderTextStyle">
