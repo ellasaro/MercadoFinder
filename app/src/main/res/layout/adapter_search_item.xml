@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing"
+    android:layout_marginTop="@dimen/spacing_small"
+    android:layout_marginEnd="@dimen/spacing"
+    android:layout_marginBottom="@dimen/spacing_small"
+    app:cardBackgroundColor="@color/selector_white"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/adapter_search_item_image_view_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/first_search" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/adapter_search_item_text_view_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="$ 400" />
+
+            <TextView
+                android:id="@+id/adapter_search_item_text_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorDark"
+                android:textSize="16sp"
+                tools:text="Samsung Galaxy S6" />
+
+            <TextView
+                android:id="@+id/adapter_search_item_text_view_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Nuevo" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

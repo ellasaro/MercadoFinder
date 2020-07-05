@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">MercadoFinder</string>
+    <string name="price_format" translatable="false">$%s</string>
+
+    <string name="search_field_hint">What are you looking for?</string>
+    <string name="get_started_message">Type something to start your search</string>
+    <string name="empty_search_list">No results found</string>
+    <string name="unexpected_error_message">Oops! Something went wrong\nPlease, try again later</string>
+    <string name="connection_error_message">Connection error\nCheck your internet connection and try again</string>
+    <string name="price">Price:</string>
+    <string name="free_shipping">Free shipping:</string>
+    <string name="condition">Condition:</string>
+    <string name="no_internet_browser_toast_message">You don\'t have an internet browser to open this link with :(</string>
+    <string name="sold">Sold:</string>
+    <string name="available">Available:</string>
+    <string name="go_to_product_page">Go to product\'s page</string>
+</resources>

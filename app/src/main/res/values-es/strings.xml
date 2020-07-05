@@ -1,0 +1,7 @@
+<resources>
+    <string name="search_field_hint">¿Qué estás buscando?</string>
+    <string name="get_started_message">Escribe algo para comenzar la búsqueda</string>
+    <string name="empty_search_list">No hubieron resultados</string>
+    <string name="unexpected_error_message">Oops! Algo salió mal\nPor favor, vuelve a intentarlo más tarde</string>
+    <string name="connection_error_message">Error de conexión\nRevisa tu conexión de internet e inténtalo de nuevo</string>
+</resources>

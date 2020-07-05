@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/layout_user_message_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_message_image_width"
+        app:tint="@color/colorViewDisabled"
+        tools:srcCompat="@drawable/first_search" />
+
+    <TextView
+        android:id="@+id/layout_user_message_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_medium"
+        android:gravity="center"
+        android:padding="@dimen/spacing"
+        android:textColor="@color/colorViewDisabled"
+        tools:text="@string/get_started_message" />
+
+</LinearLayout>
