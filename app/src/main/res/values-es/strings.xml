@@ -4,4 +4,23 @@
     <string name="empty_search_list">No hubieron resultados</string>
     <string name="unexpected_error_message">Oops! Algo salió mal\nPor favor, vuelve a intentarlo más tarde</string>
     <string name="connection_error_message">Error de conexión\nRevisa tu conexión de internet e inténtalo de nuevo</string>
+    <string name="price">Precio:</string>
+    <string name="free_shipping">Envío gratis:</string>
+    <string name="condition">Estado:</string>
+    <string name="no_internet_browser_toast_message">No tienes un navegado con el que abrir el link :(</string>
+    <string name="sold">Vendidos:</string>
+    <string name="available">Disponibles:</string>
+    <string name="go_to_product_page">Ver página del producto</string>
+    <string name="available_first_range">menos de 50</string>
+    <string name="available_second_range">menos de 100</string>
+    <string name="available_third_range">más de cien</string>
+    <string name="sold_second_range">menos de 50</string>
+    <string name="sold_third_range">menos de 100</string>
+    <string name="sold_fourth_range">más de 100</string>
+    <string name="condition_new">nuevo</string>
+    <string name="condition_used">usado</string>
+    <string name="yes">si</string>
+    <string name="no">no</string>
+    <string name="installments_format">o %s x %s</string>
+    <string name="product_detail">Detalle del producto</string>
 </resources>
