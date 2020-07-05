@@ -61,6 +61,9 @@
             android:id="@+id/fragment_search_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/scrollable_views_fade_edge_length"
+            android:requiresFadingEdge="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/adapter_search_item" />
 

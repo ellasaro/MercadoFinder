@@ -2,14 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MercadoFinderSelectableCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/spacing"
     android:layout_marginTop="@dimen/spacing_small"
     android:layout_marginEnd="@dimen/spacing"
-    android:layout_marginBottom="@dimen/spacing_small"
-    app:cardBackgroundColor="@color/selector_white"
-    app:cardCornerRadius="5dp">
+    android:layout_marginBottom="@dimen/spacing_small">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,21 +34,18 @@
 
             <TextView
                 android:id="@+id/adapter_search_item_text_view_price"
+                style="@style/MercadoFinderHeaderTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorDark"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 tools:text="$ 400" />
 
             <TextView
                 android:id="@+id/adapter_search_item_text_view_title"
+                style="@style/MercadoFinderSubHeaderTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/colorDark"
-                android:textSize="16sp"
                 tools:text="Samsung Galaxy S6" />
 
             <TextView

@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.activities.MainActivity">
+        <activity
+            android:name=".presentation.activities.MainActivity"
+            android:theme="@style/MainActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +22,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.activities.DetailActivity"/>
+        <activity android:name=".presentation.activities.DetailActivity"
+            android:label="@string/product_detail"/>
     </application>
 
 </manifest>

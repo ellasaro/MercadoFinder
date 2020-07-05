@@ -7,6 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MainActivityTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
     <style name="MercadoFinderHeaderTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/text_size_2</item>
         <item name="android:textStyle">bold</item>
@@ -16,6 +20,23 @@
     <style name="MercadoFinderSubHeaderTextStyle" parent="MercadoFinderHeaderTextStyle">
         <item name="android:textSize">@dimen/text_size_1</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MercadoFinderCardView" parent="CardView">
+        <item name="cardBackgroundColor">@color/colorWhite</item>
+        <item name="cardCornerRadius">@dimen/card_view_corner_radius</item>
+    </style>
+
+    <style name="MercadoFinderSelectableCardView" parent="MercadoFinderCardView">
+        <item name="cardBackgroundColor">@color/selector_white</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="MercadoFinderButton" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/selector_accent</item>
+        <item name="android:textColor">@color/selector_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

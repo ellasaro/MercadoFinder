@@ -13,7 +13,8 @@ import androidx.fragment.app.Fragment
 import com.blackfrogweb.mercadofinder.presentation.activities.*
 import com.blackfrogweb.mercadofinder.R
 import com.blackfrogweb.mercadofinder.domain.entities.SearchItem
-import com.blackfrogweb.mercadofinder.presentation.helpers.Mapper
+import com.blackfrogweb.mercadofinder.presentation.constants.CONDITION_NEW
+import com.blackfrogweb.mercadofinder.presentation.helpers.StringMapper
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detail.view.*
 
@@ -58,10 +59,31 @@ class DetailFragment : Fragment() {
                 .placeholder(R.drawable.image_placeholder)
                 .into(v?.fragment_detail_image_view_thumbnail ?: AppCompatImageView(mContext))
 
-            v?.fragment_detail_available_text_view_value?.text =
-                Mapper.getAvailableQuantity(mContext, item.availableQuantity ?: 0)
-            v?.fragment_detail_sold_text_view_value?.text =
-                Mapper.getSoldQuantity(mContext, item.soldQuantity ?: 0)
+            v?.fragment_detail_text_view_price_value?.text =
+                StringMapper.getFormattedPriceString(mContext, item.price ?: 0.toDouble())
+
+            item.installments?.let {
+                v?.fragment_detail_text_view_installments_value?.text =
+                    StringMapper.getFormattedInstallmentsString(
+                        mContext,
+                        item.installments?.amount ?: 0.toDouble(),
+                        item.installments?.quantity ?: 0
+                    )
+                v?.fragment_detail_text_view_installments_value?.visibility = View.VISIBLE
+            }
+
+            v?.fragment_detail_text_view_condition_value?.text =
+                if (item.condition == CONDITION_NEW) mContext.getString(R.string.condition_new) else mContext.getString(
+                    R.string.condition_used
+                )
+            v?.fragment_detail_text_view_free_shipping_value?.text =
+                if (item.shipping?.freeShipping == true) mContext.getString(R.string.yes) else mContext.getString(
+                    R.string.no
+                )
+            v?.fragment_detail_text_view_available_value?.text =
+                StringMapper.getAvailableQuantity(mContext, item.availableQuantity ?: 0)
+            v?.fragment_detail_text_view_sold_value?.text =
+                StringMapper.getSoldQuantity(mContext, item.soldQuantity ?: 0)
 
             v?.fragment_detail_layout_user_message?.visibility = View.GONE
             v?.fragment_detail_card_view?.visibility = View.VISIBLE

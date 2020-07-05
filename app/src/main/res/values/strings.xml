@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">MercadoFinder</string>
     <string name="price_format" translatable="false">$%s</string>
+    <string name="empty_amount" translatable="false">-</string>
 
     <string name="search_field_hint">What are you looking for?</string>
     <string name="get_started_message">Type something to start your search</string>
@@ -14,4 +15,16 @@
     <string name="sold">Sold:</string>
     <string name="available">Available:</string>
     <string name="go_to_product_page">Go to product\'s page</string>
+    <string name="available_first_range">less than fifty</string>
+    <string name="available_second_range">less than a hundred</string>
+    <string name="available_third_range">over a hundred</string>
+    <string name="sold_second_range">less than 50</string>
+    <string name="sold_third_range">less than 100</string>
+    <string name="sold_fourth_range">over a hundred</string>
+    <string name="condition_new">new</string>
+    <string name="condition_used">used</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="installments_format">or %s x %s</string>
+    <string name="product_detail">Product detail</string>
 </resources>

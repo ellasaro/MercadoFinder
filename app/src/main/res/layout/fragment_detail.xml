@@ -13,10 +13,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/fragment_detail_card_view"
+            style="@style/MercadoFinderCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing"
-            android:padding="@dimen/spacing">
+            android:layout_margin="@dimen/spacing">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,11 +26,9 @@
 
                 <TextView
                     android:id="@+id/fragment_detail_text_view_title"
+                    style="@style/MercadoFinderHeaderTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
                     tools:text="Prodcut title" />
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -38,6 +36,7 @@
                     android:layout_width="@dimen/item_detail_image_size"
                     android:layout_height="@dimen/item_detail_image_size"
                     android:layout_gravity="center"
+                    android:layout_margin="@dimen/spacing"
                     android:src="@drawable/image_placeholder" />
 
                 <LinearLayout
@@ -56,10 +55,25 @@
                         android:layout_height="match_parent" />
 
                     <TextView
+                        android:id="@+id/fragment_detail_text_view_price_value"
                         style="@style/MercadoFinderSubHeaderTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="$300" />
+
+                    <Space
+                        android:layout_width="@dimen/spacing_small"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_detail_text_view_installments_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/colorGreen"
+                        android:visibility="gone"
+                        tools:text="$300"
+                        tools:visibility="visible" />
 
                 </LinearLayout>
 
@@ -80,6 +94,7 @@
                         android:layout_height="match_parent" />
 
                     <TextView
+                        android:id="@+id/fragment_detail_text_view_condition_value"
                         style="@style/MercadoFinderSubHeaderTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -104,7 +119,7 @@
                         android:layout_height="match_parent" />
 
                     <TextView
-                        android:id="@+id/fragment_detail_free_shipping_text_view_value"
+                        android:id="@+id/fragment_detail_text_view_free_shipping_value"
                         style="@style/MercadoFinderSubHeaderTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -129,7 +144,7 @@
                         android:layout_height="match_parent" />
 
                     <TextView
-                        android:id="@+id/fragment_detail_available_text_view_value"
+                        android:id="@+id/fragment_detail_text_view_available_value"
                         style="@style/MercadoFinderSubHeaderTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -154,7 +169,7 @@
                         android:layout_height="match_parent" />
 
                     <TextView
-                        android:id="@+id/fragment_detail_sold_text_view_value"
+                        android:id="@+id/fragment_detail_text_view_sold_value"
                         style="@style/MercadoFinderSubHeaderTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -164,17 +179,14 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/fragment_detail_button_go_to_page"
+                    style="@style/MercadoFinderButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/spacing"
-                    android:backgroundTint="@color/selector_accent"
                     android:drawableEnd="@drawable/web"
                     android:drawablePadding="@dimen/spacing"
-                    android:text="@string/go_to_product_page"
-                    android:textAllCaps="false"
-                    android:textColor="@color/selector_white"
-                    android:textStyle="bold" />
+                    android:text="@string/go_to_product_page" />
 
             </LinearLayout>
 
