@@ -13,6 +13,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.blackfrogweb.mercadofinder.R
+import com.blackfrogweb.mercadofinder.data.constants.EVENT_DETAIL_PRESSED
+import com.blackfrogweb.mercadofinder.data.constants.EVENT_SEARCH
+import com.blackfrogweb.mercadofinder.data.logging.analytics.AnalyticsLogger
+import com.blackfrogweb.mercadofinder.data.logging.crashlytics.CrashLogger
 import com.blackfrogweb.mercadofinder.domain.entities.MessageViewState
 import com.blackfrogweb.mercadofinder.domain.entities.SearchItem
 import com.blackfrogweb.mercadofinder.domain.entities.SearchViewState
@@ -32,6 +36,7 @@ import kotlinx.android.synthetic.main.layout_user_message.view.*
  */
 class SearchFragment : Fragment(), OnSearchItemListener {
 
+    private val location = this::class.java.simpleName
     private var mSearchViewModel: SearchViewModel? = null
     private var mInteractionListener: OnSearchItemListener? = null
     private var mSearchItemAdapter: AdapterSearchItem? = null
@@ -56,10 +61,8 @@ class SearchFragment : Fragment(), OnSearchItemListener {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_search, container, false)
-
         mSearchItemAdapter = AdapterSearchItem(this)
         v?.fragment_search_recycler_view?.adapter = mSearchItemAdapter
-
         return v
     }
 
@@ -73,6 +76,8 @@ class SearchFragment : Fragment(), OnSearchItemListener {
                 ) {
                     v?.fragment_search_edit_text_search_field?.clearFocus()
                     hideKeyboard(v?.fragment_search_edit_text_search_field)
+                    AnalyticsLogger.logEventWithoutParams(mContext, EVENT_SEARCH)
+                    CrashLogger.logEvent(location, "$EVENT_SEARCH -> ${v?.fragment_search_edit_text_search_field?.text?.toString()}")
                     mSearchViewModel?.searchTerm(
                         v?.fragment_search_edit_text_search_field?.text?.toString() ?: ""
                     )
@@ -88,13 +93,10 @@ class SearchFragment : Fragment(), OnSearchItemListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         mSearchViewModel = ViewModelProvider(requireActivity()).get(SearchViewModel::class.java)
-
         mSearchViewModel?.messageState?.observe(viewLifecycleOwner, Observer {
             handleMessageState(it)
         })
-
         mSearchViewModel?.viewState?.observe(viewLifecycleOwner, Observer {
             handleViewState(it)
         })
@@ -122,6 +124,8 @@ class SearchFragment : Fragment(), OnSearchItemListener {
     }
 
     override fun onSearchItemClicked(searchItem: SearchItem) {
+        AnalyticsLogger.logEventWithoutParams(mContext, EVENT_DETAIL_PRESSED)
+        CrashLogger.logEvent(location, "$EVENT_DETAIL_PRESSED -> ${searchItem.id}")
         mInteractionListener?.onSearchItemClicked(searchItem)
     }
 

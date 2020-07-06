@@ -6,10 +6,17 @@ import android.os.Bundle
 import com.blackfrogweb.mercadofinder.R
 import com.blackfrogweb.mercadofinder.domain.entities.SearchItem
 import com.blackfrogweb.mercadofinder.domain.interfaces.OnSearchItemListener
-import com.blackfrogweb.mercadofinder.presentation.constants.SEARCH_ITEM_KEY
+import com.blackfrogweb.mercadofinder.data.constants.SEARCH_ITEM_KEY
+import com.blackfrogweb.mercadofinder.presentation.fragments.SearchFragment
 import com.blackfrogweb.mercadofinder.presentation.fragments.DetailFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Activity where the user searches for the desired articles.
+ * This activity may host a [SearchFragment] and a [DetailActivity]
+ * in two-pane mode (on tablets) or just a [SearchFragment]
+ * on handsets.
+ */
 class MainActivity : AppCompatActivity(), OnSearchItemListener {
 
     private var mTwoPane: Boolean = false

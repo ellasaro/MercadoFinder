@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "977180895172",
+    "firebase_url": "https://mercadofinder.firebaseio.com",
+    "project_id": "mercadofinder",
+    "storage_bucket": "mercadofinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977180895172:android:7a5bf4d8172fac218f6691",
+        "android_client_info": {
+          "package_name": "com.blackfrogweb.mercadofinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977180895172-is4h6d744d16q68oem4j1a6dmuaoeggo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3tXNmuDIkpHb-cNJ4tFwy9oi14fpMV9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977180895172-is4h6d744d16q68oem4j1a6dmuaoeggo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

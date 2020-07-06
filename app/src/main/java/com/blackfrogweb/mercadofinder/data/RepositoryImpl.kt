@@ -1,5 +1,6 @@
 package com.blackfrogweb.mercadofinder.data
 
+import com.blackfrogweb.mercadofinder.data.logging.crashlytics.CrashLogger
 import com.blackfrogweb.mercadofinder.data.services.search.declaration.SearchService
 import com.blackfrogweb.mercadofinder.data.services.search.response.SearchResponse
 import com.blackfrogweb.mercadofinder.domain.Repository
@@ -20,6 +21,7 @@ import kotlin.collections.ArrayList
 
 class RepositoryImpl : Repository {
 
+    private val location = this::class.java.simpleName
     private val searchService: SearchService
 
     init {
@@ -31,6 +33,11 @@ class RepositoryImpl : Repository {
         searchService = retrofit.create(SearchService::class.java)
     }
 
+    /**
+     * Gets from the MeracdoLibre api a list of items based on a user-entered search string
+     * @param term is a String that the user has input in the search field
+     * @return [Single] list of [SearchItem] that match the criterion
+     */
     override fun searchTerm(term: String): Single<ArrayList<SearchItem>> {
 
         val call = searchService.getSearchResultsForTerm(term)
@@ -45,11 +52,13 @@ class RepositoryImpl : Repository {
                         val resultList = response.body()?.itemList ?: arrayListOf()
                         emitter.onSuccess(resultList)
                     } else {
+                        CrashLogger.logEvent(location, "searchTerm unsuccessful with code ${response.code()}")
                         emitter.onError(Throwable("Unexpected error"))
                     }
                 }
 
                 override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
+                    CrashLogger.logEvent(location, "searchTerm fail ${t.message}")
                     val errorMessage = if (isConnectionException(t)) {
                         "Connection error"
                     } else {

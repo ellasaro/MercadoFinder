@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.blackfrogweb.mercadofinder.R
 import com.blackfrogweb.mercadofinder.domain.entities.SearchItem
 import com.blackfrogweb.mercadofinder.domain.interfaces.OnSearchItemListener
-import com.blackfrogweb.mercadofinder.presentation.constants.CONDITION_NEW
+import com.blackfrogweb.mercadofinder.data.constants.CONDITION_NEW
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.adapter_search_item.view.*
 

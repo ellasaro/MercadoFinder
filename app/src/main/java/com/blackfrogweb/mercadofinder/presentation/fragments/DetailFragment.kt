@@ -14,7 +14,10 @@ import androidx.fragment.app.Fragment
 import com.blackfrogweb.mercadofinder.presentation.activities.*
 import com.blackfrogweb.mercadofinder.R
 import com.blackfrogweb.mercadofinder.domain.entities.SearchItem
-import com.blackfrogweb.mercadofinder.presentation.constants.CONDITION_NEW
+import com.blackfrogweb.mercadofinder.data.constants.CONDITION_NEW
+import com.blackfrogweb.mercadofinder.data.constants.EVENT_NAVIGATE_TO_PRODUCT_PAGE
+import com.blackfrogweb.mercadofinder.data.logging.analytics.AnalyticsLogger
+import com.blackfrogweb.mercadofinder.data.logging.crashlytics.CrashLogger
 import com.blackfrogweb.mercadofinder.presentation.helpers.StringMapper
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detail.view.*
@@ -28,6 +31,7 @@ import kotlinx.android.synthetic.main.layout_user_message.view.*
  */
 class DetailFragment : Fragment() {
 
+    private val location = this::class.java.simpleName
     private lateinit var mContext: Context
     private var detailedItem: SearchItem? = null
     private var v: View? = null
@@ -103,15 +107,21 @@ class DetailFragment : Fragment() {
     }
 
     private fun navigateToItemPage(uri: String?) {
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
-        if (browserIntent.resolveActivity(mContext.packageManager) != null) {
-            startActivity(browserIntent)
-        } else {
-            Toast.makeText(
-                mContext,
-                getString(R.string.no_internet_browser_toast_message),
-                Toast.LENGTH_LONG
-            ).show()
+        AnalyticsLogger.logEventWithoutParams(mContext, EVENT_NAVIGATE_TO_PRODUCT_PAGE)
+        CrashLogger.logEvent(location, "$EVENT_NAVIGATE_TO_PRODUCT_PAGE -> $uri")
+        try {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+            if (browserIntent.resolveActivity(mContext.packageManager) != null) {
+                startActivity(browserIntent)
+            } else {
+                Toast.makeText(
+                    mContext,
+                    getString(R.string.no_internet_browser_toast_message),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        } catch (e: Exception) {
+            CrashLogger.logException(e)
         }
     }
 }
