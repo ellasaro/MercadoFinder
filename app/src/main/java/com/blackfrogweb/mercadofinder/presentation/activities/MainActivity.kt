@@ -20,20 +20,44 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), OnSearchItemListener {
 
     private var mTwoPane: Boolean = false
+    private var mDetailFragmentCurrentItem: SearchItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mTwoPane = activity_main_fragment_detail != null
+        if (savedInstanceState != null) {
+            mDetailFragmentCurrentItem =
+                savedInstanceState.getSerializable(SEARCH_ITEM_KEY) as? SearchItem
+        }
     }
 
     override fun onSearchItemClicked(searchItem: SearchItem) {
-        if(mTwoPane) {
-            (activity_main_fragment_detail as? DetailFragment)?.showItemDetail(searchItem)
+        if (mTwoPane) {
+            mDetailFragmentCurrentItem = searchItem
+            (activity_main_fragment_detail as? DetailFragment)?.showItemDetail(
+                mDetailFragmentCurrentItem
+            )
         } else {
             val detailIntent = Intent(this, DetailActivity::class.java)
             detailIntent.putExtra(SEARCH_ITEM_KEY, searchItem)
             startActivity(detailIntent)
+        }
+    }
+
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+        mDetailFragmentCurrentItem?.let {
+            (activity_main_fragment_detail as? DetailFragment)?.showItemDetail(
+                mDetailFragmentCurrentItem
+            )
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        mDetailFragmentCurrentItem?.let {
+            outState.putSerializable(SEARCH_ITEM_KEY, it)
         }
     }
 }
