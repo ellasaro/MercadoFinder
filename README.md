@@ -1,2 +1,10 @@
 # MercadoFinder
-Basic Android app which consumes a MercadoLibre api to search for items for sale.
+Aplicación Android básica que consume la api de búsqueda de Mercado Libre.
+
+## Notas y aclaraciones:
+- La aplicación soporta celulares y tablets
+- Usa una arquiterctura MVVM
+- Incluye logs de eventos de Analytics y Crashlytics
+- Soporta español e inglés
+- No incluye unit o ui test
+- Todos los gráficos utilizados fueron obtenidos de flaticon.com
