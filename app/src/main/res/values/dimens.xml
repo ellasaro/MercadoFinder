@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_view_corner_radius">5dp</dimen>
+    <dimen name="text_size_2">20sp</dimen>
+    <dimen name="text_size_1">16sp</dimen>
+
+    <dimen name="splash_logo_size">120dp</dimen>
+    <dimen name="spacing">8dp</dimen>
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="user_message_image_width">75dp</dimen>
+    <dimen name="item_detail_image_size">150dp</dimen>
+    <dimen name="scrollable_views_fade_edge_length">24dp</dimen>
+</resources>

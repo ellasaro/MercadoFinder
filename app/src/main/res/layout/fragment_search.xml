@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorViewBackground"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing">
+
+        <LinearLayout
+            android:id="@+id/fragment_search_layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:elevation="8dp"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_small">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment_search_edit_text_search_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/search_field_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/colorTextDark"
+                android:textCursorDrawable="@null" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/spacing"
+                android:layout_marginEnd="@dimen/spacing"
+                android:tint="@color/colorTextDark"
+                app:srcCompat="@drawable/magnify" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_search_layout_search">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_search_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/scrollable_views_fade_edge_length"
+            android:requiresFadingEdge="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/adapter_search_item" />
+
+        <include
+            android:id="@+id/fragment_search_layout_user_message"
+            layout="@layout/layout_user_message"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/fragment_search_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
